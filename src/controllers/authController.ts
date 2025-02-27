@@ -10,7 +10,7 @@ exports.login = async (req: Request, res: Response) => {
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      res.status(401).json({ message: 'Credenciales invalidas' });
+      res.status(404).json({ message: 'Usuario no encontrado' });
       return;
     }
 
